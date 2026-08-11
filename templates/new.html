@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="/contacts/new" method="post">
+        <fieldset>
+            <legend>Contact Info</legend>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" 
+                name="email" 
+                id=""
+                placeholder="Email"
+                value="{{contact.email or ''}}">
+
+                <span class="error">
+                    {{contact.errors['email']}}
+                </span>
+            </p>
+            <p>
+                <label for="first_name">First Name</label>
+                <input type="text" 
+                name="first_name" 
+                id="first_name"
+                placeholder="John"
+                value="{{contact.first or ''}}">
+
+                <span class="error">
+                    {{contact.errors['first']}}
+                </span>
+            </p>
+            <p>
+                <label for="last_name">Last Name</label>
+                <input type="text" 
+                name="last_name" 
+                id="last_name"
+                placeholder="Doe"
+                value="{{contact.last or ''}}">
+
+                <span class="error">
+                    {{contact.errors['last']}}
+                </span>
+            </p>
+            <p>
+                <label for="phone">Phone Number</label>
+                <input type="text" 
+                name="phone" 
+                id="phone"
+                placeholder="Ex. 1112223333"
+                value="{{contact.phone or ''}}">
+
+                <span class="error">
+                    {{contact.errors['phone']}} 
+                </span>
+            </p>
+            <button>Save</button>
+        </fieldset>
+    </form>
+
+    <p><a href="/contacts">Back</a></p>
+{% endblock %}

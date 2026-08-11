@@ -20,3 +20,7 @@ def contactsPage():
         contacts_set = Contact.all()
     return render_template("./index.html", contacts = contacts_set)
 
+
+@app.route('/contacts/new', methods = ["GET"])
+def contacts_new_get():
+    return render_template("new.html", contact = Contact())
