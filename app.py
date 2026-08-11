@@ -1,5 +1,7 @@
 from flask import Flask, redirect, request, render_template
-from contacts import Contact
+from contacts import Contact, initialize_contacts
+
+initialize_contacts()
 
 
 app = Flask(__name__)
@@ -16,4 +18,4 @@ def contactsPage():
         contacts_set = Contact.search(search)
     else:
         contacts_set = Contact.all()
-    return render_template("./test.html", contacts = contacts_set)
+    return render_template("./index.html", contacts = contacts_set)
