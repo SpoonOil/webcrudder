@@ -19,3 +19,4 @@ def contactsPage():
     else:
         contacts_set = Contact.all()
     return render_template("./index.html", contacts = contacts_set)
+

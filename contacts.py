@@ -4,8 +4,10 @@ class Contact:
     total_contacts = 0
     contact_list = []
 
-    def __init__(self, name, email, phone):
-        self.name = name
+    def __init__(self, id, firstn, lastn, email, phone):
+        self.id = id,
+        self.first = firstn
+        self.last = lastn
         self.email = email
         self.phone = phone
         Contact.contact_list.append(self)
@@ -23,7 +25,7 @@ def initialize_contacts():
     with open("contacts.txt", newline="") as file_data:
         contact_rows= csv.reader(file_data, delimiter=",")
         for row in contact_rows:
-            Contact(row[0], row[1], row[2])
+            Contact(row[0], row[1], row[2], row[3], row[4])
         
 
 
