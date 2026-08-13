@@ -1,6 +1,7 @@
 import secrets
 
-from flask import Flask, flash, redirect, request, render_template
+from flask import Flask, flash, redirect, render_template, request
+
 from contacts import Contact, initialize_contacts
 
 initialize_contacts()
@@ -33,8 +34,8 @@ def contacts_new():
     c = Contact(
         request.form['first_name'],
         request.form['last_name'],
-        request.form['phone'],
-        request.form['email'])
+        request.form['email'],
+        request.form['phone'])
 
     if c.save():
         flash("Created New Contact")

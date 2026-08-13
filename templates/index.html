@@ -15,13 +15,13 @@
                 <th>Phone </th>
             </tr>
         </thead>
-        <tbody> 
+        <tbody>
             {% for contact in contacts %}
             <tr>
                 <td>{{contact.first}}</td>
                 <td>{{contact.last}}</td>
-                <td>{{contact.phone}}</td>
                 <td>{{contact.email}}</td>
+                <td>{{contact.phone}}</td>
                 <td><a href="/contacts/{{contact.id}}/edit">Edit</a>
                 <a href="/contacts/{{ contact.id}}">View</a></td>
             </tr>
