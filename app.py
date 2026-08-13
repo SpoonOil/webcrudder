@@ -18,7 +18,7 @@ def index():
 @app.route("/contacts")
 def contactsPage():
     search = request.args.get("q")
-    if search is not None:
+    if search is not None and len(search) != 0:
         contacts_set = Contact.search(search)
     else:
         contacts_set = Contact.all()
